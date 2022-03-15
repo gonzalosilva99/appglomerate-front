@@ -1,0 +1,58 @@
+<!-- <div ckass='card'>
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class='card-body'>
+        <div class="row">
+            <div class="col-md-2">
+                Filter by:
+            </div>
+            <div class="col-md-4">
+                <input type="text"
+                    [(ngModel)]='listFilter'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Filtered by: {{listFilter}}</h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf='places'>
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary" (click)="toggleImage()">
+                                Show image
+                            </button>
+                        </th>
+                        <th>Place</th>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Star rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let place of filteredPlaces">
+                        <td><img *ngIf="showImage" [height]='imageHeight' [src]='place.imageUrl'></td>
+                        <td>{{place.name}}</td>
+                        <td>{{place.description}}</td>
+                        <td>{{place.latitude}}</td>
+                        <td>{{place.longitud}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+<google-map [center]="center" height="100%" width="100%" style="position:absolute;top:0px;right:0px;bottom:0px; left:0px;">
+    <map-marker
+    *ngFor="let marker of markers"
+    [position]="marker.position"
+    [title]="marker.title"
+    [label]="marker.label"
+    [options]="marker.options"
+    [icon]="marker.icon"
+    >
+  </map-marker> 
+</google-map>

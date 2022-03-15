@@ -1,0 +1,11 @@
+span{
+    color:yellow;
+}
+
+.crop{
+    overflow: hidden;
+}
+
+div{
+    cursor: pointer;
+}
